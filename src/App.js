@@ -126,8 +126,18 @@ const HomeSection = () => (
 
 const ProjectsSection = () => {
   const projects = [
-    { title: 'Glass Voicemail', description: 'Using a Voronoi diagram to represent a voicemail from my mom.', image: '/assets/glass_voicemail/glass_voicemail_header.png', link: '/glass-voicemail' },
-    { title: 'Metro Windows', description: 'Depicting public transit maps in stained glass.', image: '/assets/glass_portfolio/chicago_metro.jpg', link: '/metro-maps' },
+    {
+      title: 'Glass Voicemail',
+      description: 'Using a Voronoi diagram to represent a voicemail from my mom.',
+      image: '/portfolio/assets/glass_voicemail/glass_voicemail_header.png',
+      link: '/glass-voicemail'
+    },
+    {
+      title: 'Metro Windows',
+      description: 'Depicting public transit maps in stained glass.',
+      image: '/portfolio/assets/glass_portfolio/chicago_metro.jpg',
+      link: '/metro-maps',
+    }
   ];
 
   return (
@@ -315,7 +325,7 @@ const Footer = () => (
 // ==== MAIN EXPORT ====
 export default function Portfolio() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path="/glass-voicemail" element={<GlassVoicemail />} />
