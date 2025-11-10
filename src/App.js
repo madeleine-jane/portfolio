@@ -107,16 +107,31 @@ const HomeSection = () => (
         </Box>
         <Box sx={{ flex: '1' }}>
           <Box
-            component="img"
-            src={`${process.env.PUBLIC_URL}/assets/an_art_squiggle.png`}
-            alt="Decorative art squiggle"
             sx={{
               width: '100%',
               height: 600,
-              objectFit: 'contain',
-              borderRadius: 1
+              backgroundColor: 'white',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: 1,
+              overflow: 'hidden'
             }}
-          />
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain'
+              }}
+            >
+              <source src={`${process.env.PUBLIC_URL}/assets/an_art_trimmed.mov`} type="video/mp4" />
+            </video>
+          </Box>
         </Box>
       </Box>
     </Container>
