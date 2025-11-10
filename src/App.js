@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -144,7 +144,7 @@ const ProjectsSection = () => {
     {
       title: 'Glass Voicemail',
       description: 'Using a Voronoi diagram to represent a voicemail from my mom.',
-      image: `${process.env.PUBLIC_URL}/assets/glass_voicemail/glass_voicemail_header.png`,
+      image: `${process.env.PUBLIC_URL}/assets/glass_voicemail/glass_voicemail_bw.png`,
       link: '/glass-voicemail'
     },
     {
@@ -163,10 +163,10 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Grid item xs={12} key={index}>
               <Card elevation={0} sx={{ border: '1px solid #e0e0e0', transition: 'all 0.3s ease-in-out', '&:hover': { transform: 'translateY(-8px)', boxShadow: '0 12px 24px rgba(0,0,0,0.1)' } }}>
-                <CardActionArea href={project.link} sx={{ '&:hover': { bgcolor: 'transparent' } }}>
+                <CardActionArea component={Link} to={project.link} sx={{ '&:hover': { bgcolor: 'transparent' } }}>
                   <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, height: { md: 300 }, width: { md: 900 }, overflow: 'hidden' }}>
                     <Box sx={{ flex: 1, position: 'relative', '&:after': { content: '""', display: 'block', paddingTop: '100%' } }}>
-                      <CardMedia component="img" image={project.image} alt={project.title} sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <CardMedia component="img" image={project.image} alt={project.title} sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', border: '1px solid #000', borderRadius: 1 }} />
                     </Box>
                     <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', p: 4 }}>
                       <Typography variant="h4" gutterBottom sx={{ fontWeight: 300 }}>{project.title}</Typography>
@@ -250,7 +250,7 @@ const GlassworkSection = () => {
         <ImageList variant="masonry" cols={3} gap={16}>
           {glassPortfolio.map((item, index) => (
             <ImageListItem key={index} onClick={() => setSelectedImage(item)} sx={{ cursor: 'pointer', position: 'relative', '&:hover .image-overlay': { opacity: 1 } }}>
-              <img src={`${process.env.PUBLIC_URL}/assets/glass_portfolio/${item.image_filename}`} alt={item.title} loading="lazy" style={{ display: 'block', borderRadius: 8, width: '100%' }} />
+              <img src={`${process.env.PUBLIC_URL}/assets/glass_portfolio/${item.image_filename}`} alt={item.title} loading="lazy" style={{ display: 'block', borderRadius: 8, width: '100%', border: '1px solid #000', boxSizing: 'border-box' }} />
               <Box className="image-overlay" sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, backgroundColor: 'rgba(0,0,0,0.5)', padding: 1.5, opacity: 0, transition: 'opacity 0.2s ease', borderRadius: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Typography variant="subtitle2" sx={{ color: 'white', textAlign: 'center' }}>{item.title}</Typography>
               </Box>
@@ -264,7 +264,7 @@ const GlassworkSection = () => {
               {selectedImage && (
                 <>
                   <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: 2 }}>
-                    <img src={`${process.env.PUBLIC_URL}/assets/glass_portfolio/${selectedImage.image_filename}`} alt={selectedImage.title} style={{ maxWidth: '100%', maxHeight: '90vh', objectFit: 'contain', borderRadius: 2, display: 'block' }} />
+                    <img src={`${process.env.PUBLIC_URL}/assets/glass_portfolio/${selectedImage.image_filename}`} alt={selectedImage.title} style={{ maxWidth: '100%', maxHeight: '90vh', objectFit: 'contain', borderRadius: 2, display: 'block', border: '1px solid #000', boxSizing: 'border-box' }} />
                     <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 2, backgroundColor: 'rgba(0,0,0,0.75)', color: 'white', borderRadius: 2 }}>
                       <Typography variant="h6" component="h2">{selectedImage.title}</Typography>
                       {selectedImage.caption && <Typography variant="subtitle2" sx={{ mt: 1, color: 'rgba(255,255,255,0.9)' }}>{selectedImage.caption}</Typography>}
