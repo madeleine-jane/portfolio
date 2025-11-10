@@ -27,26 +27,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
-const codePortfolio = [
-  {
-    title: 'Fruit Salad',
-    filename: 'fruit_salad.mov',
-    caption: 'Fruits that morph into other fruits!',
-    link: 'https://editor.p5js.org/madeleinejane.andersen/full/4zdqLO3t1'
-  },
-  {
-    title: 'Eternity Simulator',
-    filename: 'eternity_sim.mov',
-    caption: 'Every thousand years, a pixel erodes.',
-    link: 'https://editor.p5js.org/madeleinejane.andersen/full/Qz2T_aMY-'
-  },
-  {
-    title: 'Migration Station',
-    filename: 'migration_station.mov',
-    caption: 'A travel poster for birdwatching! Birds fly across the screen in randomly generated, naturalistic flight patterns.',
-    link: 'https://editor.p5js.org/madeleinejane.andersen/full/ciMHviYwq'
-  }
-]
 
 const glassPortfolio = [
   {
@@ -171,10 +151,10 @@ const Navigation = ({ position = 'top' }) => {
 
   return (
     <AppBar
-      position={'static'}
+      position="sticky"
       color="default"
       elevation={1}
-      sx={{ backgroundColor: 'black' }}
+      sx={{ backgroundColor: 'black', top: 0 }}
     >
       <Toolbar sx={{ justifyContent: 'space-between', color: 'white' }}>
         <Box sx={{ display: 'flex', gap: 2 }}>
@@ -192,14 +172,14 @@ const Navigation = ({ position = 'top' }) => {
           </Button>
         </Box>
         <Box sx={{ display: 'flex', gap: 1 }}>
-          <IconButton href="mailto:your.email@example.com" color="inherit">
+          <IconButton href="mailto:madeleinejane.andersen@gmail.com" color="inherit">
             <EmailIcon />
           </IconButton>
-          <IconButton href="https://instagram.com/yourusername" target="_blank" color="inherit">
-            <InstagramIcon />
-          </IconButton>
-          <IconButton href="https://linkedin.com/in/yourusername" target="_blank" color="inherit">
+          <IconButton href="https://www.linkedin.com/in/madeleine-andersen-0153a91b9/" target="_blank" color="inherit">
             <LinkedInIcon />
+          </IconButton>
+          <IconButton href="https://www.instagram.com/mattiejane.art/" target="_blank" color="inherit">
+            <InstagramIcon />
           </IconButton>
         </Box>
       </Toolbar>
@@ -253,50 +233,86 @@ const HomeSection = () => (
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'Project One',
-      description: 'A beautiful intersection of glass and light exploring geometric patterns.',
-      image: 'https://via.placeholder.com/400x300',
-      link: '/project-one'
+      title: 'Glass Voicemail',
+      description: 'Using a Voronoi diagram to represent a voicemail from my mom.',
+      image: '/assets/glass_voicemail/glass_voicemail_header.png',
+      link: '/glass-voicemail'
     },
     {
-      title: 'Project Two',
-      description: 'Interactive data visualization bringing environmental data to life.',
-      image: 'https://via.placeholder.com/400x300',
-      link: '/project-two'
+      title: 'Metro Windows',
+      description: 'Depicting public transit maps in stained glass.',
+      image: '/assets/glass_portfolio/chicago_metro.jpg',
+      link: '/metro-maps'
     },
-    {
-      title: 'Project Three',
-      description: 'Commissioned stained glass piece for a community art center.',
-      image: 'https://via.placeholder.com/400x300',
-      link: '/project-three'
-    }
   ];
 
   return (
-    <Box sx={{ py: 8, backgroundColor: 'white' }}>
+    <Box sx={{ backgroundColor: 'white', paddingBottom: 8 }}>
       <Container maxWidth="lg">
         <SectionTitle>
           Here's what I'm working on!
         </SectionTitle>
         <Grid container spacing={4}>
           {projects.map((project, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card elevation={0} sx={{ border: '1px solid #e0e0e0' }}>
-                <CardActionArea href={project.link}>
-                  <CardMedia
-                    component="img"
-                    height="250"
-                    image={project.image}
-                    alt={project.title}
-                  />
-                  <CardContent>
-                    <Typography variant="h6" gutterBottom>
-                      {project.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {project.description}
-                    </Typography>
-                  </CardContent>
+            <Grid item xs={12} key={index}>
+              <Card
+                elevation={0}
+                sx={{
+                  border: '1px solid #e0e0e0',
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 12px 24px rgba(0,0,0,0.1)',
+                  }
+                }}>
+                <CardActionArea
+                  href={project.link}
+                  sx={{
+                    '&:hover .project-image': {
+                      transform: 'scale(1.05)',
+                    }
+                  }}>
+                  <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, height: { md: 300 }, width: { md: 900 }, overflow: 'hidden' }}>
+                    <Box sx={{
+                      flex: 1,
+                      position: 'relative',
+                      '&:after': {
+                        content: '""',
+                        display: 'block',
+                        paddingTop: '100%' // Creates a square aspect ratio
+                      }
+                    }}>
+                      <CardMedia
+                        component="img"
+                        className="project-image"
+                        sx={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          transition: 'transform 0.5s ease-in-out'
+                        }}
+                        image={project.image}
+                        alt={project.title}
+                      />
+                    </Box>
+                    <CardContent sx={{
+                      flex: 1,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      p: 4
+                    }}>
+                      <Typography variant="h4" gutterBottom sx={{ fontWeight: 300 }}>
+                        {project.title}
+                      </Typography>
+                      <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.2rem', lineHeight: 1.8 }}>
+                        {project.description}
+                      </Typography>
+                    </CardContent>
+                  </Box>
                 </CardActionArea>
               </Card>
             </Grid>
@@ -313,7 +329,7 @@ const CodeSection = () => {
     <Box id="code" sx={{ py: 8 }}>
       <Container maxWidth="lg">
         <SectionTitle>
-          Code
+          Code Sketches
         </SectionTitle>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
@@ -580,7 +596,7 @@ const GlassworkSection = () => {
                 maxHeight: '90vh',
                 outline: 'none',
                 backgroundColor: 'white',
-                borderRadius: 8,
+                borderRadius: 2,
                 position: 'relative',
                 border: '20px solid white'
               }}
@@ -588,7 +604,7 @@ const GlassworkSection = () => {
             >
               {selectedImage && (
                 <>
-                  <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: 8 }}>
+                  <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: 2 }}>
                     <img
                       src={'/assets/glass_portfolio/' + selectedImage.image_filename}
                       alt={selectedImage.title}
@@ -596,7 +612,7 @@ const GlassworkSection = () => {
                         maxWidth: '100%',
                         maxHeight: '90vh',
                         objectFit: 'contain',
-                        borderRadius: 8,
+                        borderRadius: 2,
                         display: 'block'
                       }}
                     />
@@ -608,7 +624,7 @@ const GlassworkSection = () => {
                       p: 2,
                       backgroundColor: 'rgba(0,0,0,0.75)',
                       color: 'white',
-                      borderRadius: 4,
+                      borderRadius: 2,
                     }}>
                       <Typography variant="h6" component="h2">
                         {selectedImage.title}
@@ -663,7 +679,7 @@ const GlassworkSection = () => {
 };
 
 const AboutSection = () => (
-  <Box id="about" sx={{ py: 8 }}>
+  <Box id="about" sx={{ py: 4 }}>
     <Container maxWidth="lg">
       <Box sx={{ display: 'flex', gap: 8, flexDirection: { xs: 'column', md: 'row' } }}>
         {/* Main Content */}
@@ -783,13 +799,13 @@ export default function Portfolio() {
               Connect
             </Typography>
             <Box sx={{ display: 'flex', gap: 2 }}>
-              <IconButton href="mailto:your.email@example.com" sx={{ color: '#aaa' }}>
+              <IconButton href="mailto:madeleinejane.andersen@gmail.com" sx={{ color: '#aaa' }}>
                 <EmailIcon />
               </IconButton>
-              <IconButton href="https://linkedin.com/in/yourusername" target="_blank" sx={{ color: '#aaa' }}>
+              <IconButton href="https://www.linkedin.com/in/madeleine-andersen-0153a91b9/" target="_blank" sx={{ color: '#aaa' }}>
                 <LinkedInIcon />
               </IconButton>
-              <IconButton href="https://instagram.com/yourusername" target="_blank" sx={{ color: '#aaa' }}>
+              <IconButton href="https://www.instagram.com/mattiejane.art/" target="_blank" sx={{ color: '#aaa' }}>
                 <InstagramIcon />
               </IconButton>
             </Box>
