@@ -235,7 +235,7 @@ const GlassworkSection = () => {
         <ImageList variant="masonry" cols={3} gap={16}>
           {glassPortfolio.map((item, index) => (
             <ImageListItem key={index} onClick={() => setSelectedImage(item)} sx={{ cursor: 'pointer', position: 'relative', '&:hover .image-overlay': { opacity: 1 } }}>
-              <img src={`/assets/glass_portfolio/${item.image_filename}`} alt={item.title} loading="lazy" style={{ display: 'block', borderRadius: 8, width: '100%' }} />
+              <img src={`portfolio/assets/glass_portfolio/${item.image_filename}`} alt={item.title} loading="lazy" style={{ display: 'block', borderRadius: 8, width: '100%' }} />
               <Box className="image-overlay" sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, backgroundColor: 'rgba(0,0,0,0.5)', padding: 1.5, opacity: 0, transition: 'opacity 0.2s ease', borderRadius: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Typography variant="subtitle2" sx={{ color: 'white', textAlign: 'center' }}>{item.title}</Typography>
               </Box>
@@ -249,7 +249,7 @@ const GlassworkSection = () => {
               {selectedImage && (
                 <>
                   <Box sx={{ position: 'relative', overflow: 'hidden', borderRadius: 2 }}>
-                    <img src={`/assets/glass_portfolio/${selectedImage.image_filename}`} alt={selectedImage.title} style={{ maxWidth: '100%', maxHeight: '90vh', objectFit: 'contain', borderRadius: 2, display: 'block' }} />
+                    <img src={`portfolio/assets/glass_portfolio/${selectedImage.image_filename}`} alt={selectedImage.title} style={{ maxWidth: '100%', maxHeight: '90vh', objectFit: 'contain', borderRadius: 2, display: 'block' }} />
                     <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, p: 2, backgroundColor: 'rgba(0,0,0,0.75)', color: 'white', borderRadius: 2 }}>
                       <Typography variant="h6" component="h2">{selectedImage.title}</Typography>
                       {selectedImage.caption && <Typography variant="subtitle2" sx={{ mt: 1, color: 'rgba(255,255,255,0.9)' }}>{selectedImage.caption}</Typography>}
@@ -328,8 +328,8 @@ export default function Portfolio() {
     <Router basename="/portfolio">
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route path="/glass-voicemail" element={<GlassVoicemail />} />
-          <Route path="/metro-maps" element={<MetroMaps />} />
+          <Route path="/portfolio/glass-voicemail" element={<GlassVoicemail />} />
+          <Route path="/portfolio/metro-maps" element={<MetroMaps />} />
           <Route path="/" element={
             <Box sx={{ backgroundColor: 'white' }}>
               <Navigation />
