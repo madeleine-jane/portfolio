@@ -302,7 +302,30 @@ const AboutSection = () => (
         </Box>
 
         <Box sx={{ width: { xs: '100%', md: 320 }, flexShrink: 0, position: 'sticky', top: 100, alignSelf: 'flex-start' }}>
-          <Box component="img" src={`${process.env.PUBLIC_URL}/assets/portfolio_pic.jpg`} alt="Madeleine Andersen" sx={{ width: 280, height: 280, mx: 'auto', mb: 4, borderRadius: '50%', objectFit: 'cover' }} />
+          <Box component="img" src={`${process.env.PUBLIC_URL}/assets/portfolio_pic.jpg`} alt="Madeleine Andersen" sx={{ width: 280, height: 280, mx: 'auto', mb: 2, borderRadius: '50%', objectFit: 'cover' }} />
+
+          <Box sx={{ mt: 2, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 1 }}>
+            <a href="mailto:madeleinejane.andersen@gmail.com" style={{ color: '#666', textDecoration: 'none' }} aria-label="Email">
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <EmailIcon sx={{ color: '#666' }} />
+                <Typography variant="body2">madeleinejane.andersen@gmail.com</Typography>
+              </Box>
+            </a>
+
+            <a href="https://www.linkedin.com/in/madeleine-andersen-0153a91b9/" target="_blank" rel="noreferrer" style={{ color: '#666', textDecoration: 'none' }} aria-label="LinkedIn">
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <LinkedInIcon sx={{ color: '#666' }} />
+                <Typography variant="body2">madeleine-andersen</Typography>
+              </Box>
+            </a>
+
+            <a href="https://www.instagram.com/mattiejane.art/" target="_blank" rel="noreferrer" style={{ color: '#666', textDecoration: 'none' }} aria-label="Instagram">
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <InstagramIcon sx={{ color: '#666' }} />
+                <Typography variant="body2">@mattiejane.art</Typography>
+              </Box>
+            </a>
+          </Box>
         </Box>
       </Box>
     </Container>
