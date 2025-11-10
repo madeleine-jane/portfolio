@@ -106,9 +106,17 @@ const HomeSection = () => (
           </Typography>
         </Box>
         <Box sx={{ flex: '1' }}>
-          <Box sx={{ width: '100%', height: 400, backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 1 }}>
-            <Typography variant="body2" color="text.secondary">[Your Image Here]</Typography>
-          </Box>
+          <Box
+            component="img"
+            src="/assets/an_art_squiggle.png"
+            alt="Decorative art squiggle"
+            sx={{
+              width: '100%',
+              height: 600,
+              objectFit: 'contain',
+              borderRadius: 1
+            }}
+          />
         </Box>
       </Box>
     </Container>
