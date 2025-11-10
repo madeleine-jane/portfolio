@@ -108,7 +108,7 @@ const HomeSection = () => (
         <Box sx={{ flex: '1' }}>
           <Box
             component="img"
-            src="/assets/an_art_squiggle.png"
+            src="/portfolio/assets/an_art_squiggle.png"
             alt="Decorative art squiggle"
             sx={{
               width: '100%',
@@ -176,8 +176,8 @@ const CodeSection = () => (
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           {[
-            { title: 'Fruit Salad', src: '/assets/code_portfolio/fruit_salad.mov', desc: 'Fruits that morph into other fruits!', link: 'https://editor.p5js.org/madeleinejane.andersen/full/4zdqLO3t1' },
-            { title: 'Eternity Simulator', src: '/assets/code_portfolio/eternity_sim.mov', desc: 'Every thousand years, a pixel erodes.', link: 'https://editor.p5js.org/madeleinejane.andersen/full/uPr_kHg8j', mt: 4 }
+            { title: 'Fruit Salad', src: '/portfolio/assets/code_portfolio/fruit_salad.mov', desc: 'Fruits that morph into other fruits!', link: 'https://editor.p5js.org/madeleinejane.andersen/full/4zdqLO3t1' },
+            { title: 'Eternity Simulator', src: '/portfolio/assets/code_portfolio/eternity_sim.mov', desc: 'Every thousand years, a pixel erodes.', link: 'https://editor.p5js.org/madeleinejane.andersen/full/uPr_kHg8j', mt: 4 }
           ].map((item, i) => (
             <Paper key={i} elevation={0} sx={{ p: 2, mt: item.mt || 0, border: '1px solid #e0e0e0', cursor: 'pointer', transition: 'transform 0.2s ease', '&:hover': { transform: 'translateY(-4px)' } }} onClick={() => window.open(item.link, '_blank')}>
               <Box sx={{ width: '100%', height: 400, backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2, borderRadius: 1, overflow: 'hidden' }}>
@@ -194,7 +194,7 @@ const CodeSection = () => (
           <Paper elevation={0} sx={{ p: 2, border: '1px solid #e0e0e0', cursor: 'pointer', transition: 'transform 0.2s ease', width: 'fit-content', '&:hover': { transform: 'translateY(-4px)' } }} onClick={() => window.open('https://editor.p5js.org/madeleinejane.andersen/full/ciMHviYwq', '_blank')}>
             <Box sx={{ width: { xs: '100%', md: 525 }, height: { xs: 'auto', md: 700 }, aspectRatio: '3/4', backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2, borderRadius: 1, overflow: 'hidden' }}>
               <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'contain' }}>
-                <source src="/assets/code_portfolio/migration_station.mov" type="video/mp4" />
+                <source src="/portfolio/assets/code_portfolio/migration_station.mov" type="video/mp4" />
               </video>
             </Box>
             <Box sx={{ width: { xs: '100%', md: 525 } }}>
@@ -283,11 +283,11 @@ const AboutSection = () => (
               <Typography key={i} component="li" variant="body1" sx={{ mb: i < 2 ? 1 : 0 }}>{item}</Typography>
             ))}
           </Box>
-          <Button variant="contained" href="/assets/madeleine_portfolio.pdf" target="_blank" sx={{ py: 1.5, mt: 4, backgroundColor: 'black', color: 'white', '&:hover': { backgroundColor: 'black' } }}>View Resume (PDF)</Button>
+          <Button variant="contained" href="/portfolio/assets/madeleine_portfolio.pdf" target="_blank" sx={{ py: 1.5, mt: 4, backgroundColor: 'black', color: 'white', '&:hover': { backgroundColor: 'black' } }}>View Resume (PDF)</Button>
         </Box>
 
         <Box sx={{ width: { xs: '100%', md: 320 }, flexShrink: 0, position: 'sticky', top: 100, alignSelf: 'flex-start' }}>
-          <Box component="img" src="/assets/portfolio_pic.jpg" alt="Madeleine Andersen" sx={{ width: 280, height: 280, mx: 'auto', mb: 4, borderRadius: '50%', objectFit: 'cover' }} />
+          <Box component="img" src="/portfolio/assets/portfolio_pic.jpg" alt="Madeleine Andersen" sx={{ width: 280, height: 280, mx: 'auto', mb: 4, borderRadius: '50%', objectFit: 'cover' }} />
         </Box>
       </Box>
     </Container>
