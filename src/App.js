@@ -351,7 +351,7 @@ const CodeSection = () => {
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover'
+                    objectFit: 'contain'
                   }}
                 >
                   <source src="/assets/code_portfolio/fruit_salad.mov" type="video/mp4" />
@@ -383,7 +383,7 @@ const CodeSection = () => {
               <Box
                 sx={{
                   width: '100%',
-                  height: 300,
+                  height: 400,
                   backgroundColor: '#f5f5f5',
                   display: 'flex',
                   alignItems: 'center',
@@ -401,7 +401,7 @@ const CodeSection = () => {
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover'
+                    objectFit: 'contain'
                   }}
                 >
                   <source src="/assets/code_portfolio/eternity_sim.mov" type="video/mp4" />
@@ -424,6 +424,7 @@ const CodeSection = () => {
                 border: '1px solid #e0e0e0',
                 cursor: 'pointer',
                 transition: 'transform 0.2s ease',
+                width: 'fit-content',
                 '&:hover': {
                   transform: 'translateY(-4px)'
                 }
@@ -432,8 +433,9 @@ const CodeSection = () => {
             >
               <Box
                 sx={{
-                  width: '100%',
-                  height: 300,
+                  width: { xs: '100%', md: 525 },
+                  height: { xs: 'auto', md: 700 },
+                  aspectRatio: '3/4',
                   backgroundColor: '#f5f5f5',
                   display: 'flex',
                   alignItems: 'center',
@@ -451,18 +453,20 @@ const CodeSection = () => {
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover'
+                    objectFit: 'contain'
                   }}
                 >
                   <source src="/assets/code_portfolio/migration_station.mov" type="video/mp4" />
                 </video>
               </Box>
-              <Typography variant="h6" gutterBottom>
-                Migration Station
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                A travel poster for birdwatching! Birds fly across the screen in randomly generated, naturalistic flight patterns.
-              </Typography>
+              <Box sx={{ width: { xs: '100%', md: 525 } }}>
+                <Typography variant="h6" gutterBottom>
+                  Migration Station
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  A travel poster for birdwatching! Birds fly across the screen in randomly generated, naturalistic flight patterns.
+                </Typography>
+              </Box>
             </Paper>
           </Grid>
         </Grid>
