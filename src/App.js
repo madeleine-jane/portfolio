@@ -123,6 +123,7 @@ const HomeSection = () => (
   </Box>
 );
 
+
 const ProjectsSection = () => {
   const projects = [
     { title: 'Glass Voicemail', description: 'Using a Voronoi diagram to represent a voicemail from my mom.', image: '/assets/glass_voicemail/glass_voicemail_header.png', link: '/glass-voicemail' },
