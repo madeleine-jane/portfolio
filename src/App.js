@@ -364,13 +364,11 @@ const CodeSection = () => {
                 Fruits that morph into other fruits!
               </Typography>
             </Paper>
-          </Grid>
-
-          <Grid item xs={12} md={4}>
             <Paper
               elevation={0}
               sx={{
                 p: 2,
+                mt: 4,
                 border: '1px solid #e0e0e0',
                 cursor: 'pointer',
                 transition: 'transform 0.2s ease',
@@ -378,7 +376,7 @@ const CodeSection = () => {
                   transform: 'translateY(-4px)'
                 }
               }}
-              onClick={() => window.open('https://editor.p5js.org/madeleinejane.andersen/full/Qz2T_aMY-', '_blank')}
+              onClick={() => window.open('https://editor.p5js.org/madeleinejane.andersen/full/uPr_kHg8j', '_blank')}
             >
               <Box
                 sx={{
