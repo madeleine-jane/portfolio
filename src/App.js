@@ -27,6 +27,27 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
+const codePortfolio = [
+  {
+    title: 'Fruit Salad',
+    filename: 'fruit_salad.mov',
+    caption: 'Fruits that morph into other fruits!',
+    link: 'https://editor.p5js.org/madeleinejane.andersen/full/4zdqLO3t1'
+  },
+  {
+    title: 'Eternity Simulator',
+    filename: 'eternity_sim.mov',
+    caption: 'Every thousand years, a pixel erodes.',
+    link: 'https://editor.p5js.org/madeleinejane.andersen/full/Qz2T_aMY-'
+  },
+  {
+    title: 'Migration Station',
+    filename: 'migration_station.mov',
+    caption: 'A travel poster for birdwatching! Birds fly across the screen in randomly generated, naturalistic flight patterns.',
+    link: 'https://editor.p5js.org/madeleinejane.andersen/full/ciMHviYwq'
+  }
+]
+
 const glassPortfolio = [
   {
     title: 'Chicago Metro Map',
@@ -286,7 +307,169 @@ const ProjectsSection = () => {
   );
 };
 
+const CodeSection = () => {
 
+  return (
+    <Box id="code" sx={{ py: 8 }}>
+      <Container maxWidth="lg">
+        <SectionTitle>
+          Code
+        </SectionTitle>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6}>
+            <Paper
+              elevation={0}
+              sx={{
+                p: 2,
+                border: '1px solid #e0e0e0',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease',
+                '&:hover': {
+                  transform: 'translateY(-4px)'
+                }
+              }}
+              onClick={() => window.open('https://editor.p5js.org/madeleinejane.andersen/full/4zdqLO3t1', '_blank')}
+            >
+              <Box
+                sx={{
+                  width: '100%',
+                  height: 400,
+                  backgroundColor: '#f5f5f5',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  mb: 2,
+                  borderRadius: 1,
+                  overflow: 'hidden'
+                }}
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                >
+                  <source src="/assets/code_portfolio/fruit_salad.mov" type="video/mp4" />
+                </video>
+              </Box>
+              <Typography variant="h6" gutterBottom>
+                Fruit Salad
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Fruits that morph into other fruits!
+              </Typography>
+            </Paper>
+          </Grid>
+
+          <Grid item xs={12} md={4}>
+            <Paper
+              elevation={0}
+              sx={{
+                p: 2,
+                border: '1px solid #e0e0e0',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease',
+                '&:hover': {
+                  transform: 'translateY(-4px)'
+                }
+              }}
+              onClick={() => window.open('https://editor.p5js.org/madeleinejane.andersen/full/Qz2T_aMY-', '_blank')}
+            >
+              <Box
+                sx={{
+                  width: '100%',
+                  height: 300,
+                  backgroundColor: '#f5f5f5',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  mb: 2,
+                  borderRadius: 1,
+                  overflow: 'hidden'
+                }}
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                >
+                  <source src="/assets/code_portfolio/eternity_sim.mov" type="video/mp4" />
+                </video>
+              </Box>
+              <Typography variant="h6" gutterBottom>
+                Eternity Simulator
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Every thousand years, a pixel erodes.
+              </Typography>
+            </Paper>
+          </Grid>
+
+          <Grid item xs={12} md={4}>
+            <Paper
+              elevation={0}
+              sx={{
+                p: 2,
+                border: '1px solid #e0e0e0',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease',
+                '&:hover': {
+                  transform: 'translateY(-4px)'
+                }
+              }}
+              onClick={() => window.open('https://editor.p5js.org/madeleinejane.andersen/full/ciMHviYwq', '_blank')}
+            >
+              <Box
+                sx={{
+                  width: '100%',
+                  height: 300,
+                  backgroundColor: '#f5f5f5',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  mb: 2,
+                  borderRadius: 1,
+                  overflow: 'hidden'
+                }}
+              >
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                >
+                  <source src="/assets/code_portfolio/migration_station.mov" type="video/mp4" />
+                </video>
+              </Box>
+              <Typography variant="h6" gutterBottom>
+                Migration Station
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                A travel poster for birdwatching! Birds fly across the screen in randomly generated, naturalistic flight patterns.
+              </Typography>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
+  );
+};
 
 
 //i kind of hate the font on the title/captions but oh well
@@ -477,53 +660,6 @@ const GlassworkSection = () => {
   );
 };
 
-const CodeSection = () => (
-  <Box id="code" sx={{ py: 8, backgroundColor: 'white' }}>
-    <Container maxWidth="lg">
-      <SectionTitle>
-        Code
-      </SectionTitle>
-      <Grid container spacing={4} sx={{ gap: 2 }}>
-        <Grid item xs={6} sx={{ pr: 2 }}>
-          {/* Column 1 with Elements A and B */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-            <Paper elevation={2} sx={{ p: 4, borderRadius: 2 }}>
-              {/* Element A */}
-              <Typography variant="h6" gutterBottom>
-                Element A
-              </Typography>
-              <Typography>
-                Content for Element A
-              </Typography>
-            </Paper>
-            <Paper elevation={2} sx={{ p: 4, borderRadius: 2 }}>
-              {/* Element B */}
-              <Typography variant="h6" gutterBottom>
-                Element B
-              </Typography>
-              <Typography>
-                Content for Element B
-              </Typography>
-            </Paper>
-          </Box>
-        </Grid>
-        <Grid item xs={6} sx={{ pl: 2 }}>
-          {/* Column 2 with Element C */}
-          <Paper elevation={2} sx={{ p: 4, height: '100%', borderRadius: 2 }}>
-            {/* Element C */}
-            <Typography variant="h6" gutterBottom>
-              Element C
-            </Typography>
-            <Typography>
-              Content for Element C
-            </Typography>
-          </Paper>
-        </Grid>
-      </Grid>
-    </Container>
-  </Box>
-);
-
 const AboutSection = () => (
   <Box id="about" sx={{ py: 8 }}>
     <Container maxWidth="lg">
@@ -555,7 +691,7 @@ const AboutSection = () => (
             target="_blank"
             sx={{
               py: 1.5,
-              mt: 8,
+              mt: 4,
               backgroundColor: 'black',
               color: 'white',
               '&:hover': {
@@ -573,8 +709,7 @@ const AboutSection = () => (
           flexShrink: 0,
           position: 'sticky',
           top: 100,
-          alignSelf: 'flex-start',
-          mt: '4.5rem'  // Align with the text after the SectionTitle
+          alignSelf: 'flex-start'
         }}>
           <Box
             component="img"
