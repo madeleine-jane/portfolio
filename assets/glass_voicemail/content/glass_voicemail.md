@@ -16,7 +16,7 @@ For this work, I wanted to computationally generate a piece of stained glass. Co
 
 I landed on [Voronoi diagrams](https://en.wikipedia.org/wiki/Voronoi_diagram) as a method for generating a glass pattern. A Voronoi diagram tesselates a plane into simple polygons based on a set of points on that plane. 
 
-So now all I needed was to choose a set of points to use for the Voronoi diagram. I wanted to create a data visualization, so I needed to choose a set of points that represented some meaningful data. I found an old voicemail, and then:
+So now all I needed was to choose a set of points to use for the Voronoi diagram. I wanted to create a data visualization, so I needed to choose a set of points that represented some meaningful data. I found a voicemail from my mom, and then:
 - Sampled the amplitude peaks from the soundwave
 - Used the amplitude peaks to create a set of points
 - Used those points to create the Voronoi diagram. 
