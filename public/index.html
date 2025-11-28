@@ -11,7 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Stack+Sans+Headline:wght@200..700&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
     rel="stylesheet">
   <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -28,6 +29,30 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>Madeleine Andersen — Portfolio</title>
+
+  <!-- GitHub Pages SPA redirect script -->
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // https://github.com/rafgraph/spa-github-pages
+    (function (l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location));
+
+    // Scroll to top on page load
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
 </head>
 
 <body>

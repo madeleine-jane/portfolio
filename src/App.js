@@ -34,13 +34,11 @@ const glassPortfolio = [
   { title: 'Chicago Metro Map', image_filename: 'chicago_metro.jpg', caption: 'The Chicago L metro system map, rendered in glass.' },
   { title: 'Miniature Coffee Shop', image_filename: 'coffee_shop.jpg', caption: 'My favorite coffee shop, rendered in miniature as a gift for the owners.' },
   { title: 'Ursa Major and Ursa Minor', image_filename: 'constellation_bears.jpg', caption: 'Glass constellations.' },
-  { title: 'Pomegranates', image_filename: 'pomegranates.jpg', caption: 'A transom window with pomegranates and bees.' },
   { title: 'DC Metro Map', image_filename: 'dc_metro.jpg', caption: 'The DC metro system map, rendered in glass.' },
   { title: 'Stand Mixer', image_filename: 'stand_mixer.jpg', caption: 'An image from the Kitchenaid stand mixer user manual, rendered in glass.' },
   { title: 'Kintsugi China Fish', image_filename: 'china_fish.jpg', caption: 'A fish made from broken china plates.' },
   { title: 'Koi and Water Lilies', image_filename: 'koi_window.jpg', caption: 'A five foot tall sidelight depicting water lilies and koi fish.' },
   { title: 'Peacock', image_filename: 'peacock.jpg', caption: 'An abstract peacock sitting on a metal hoop.' },
-  { title: 'Dog Portrait', image_filename: 'guinness.jpg', caption: 'A glass pet portrait.' },
   { title: 'River Eddy', image_filename: 'river_bubbles.jpg', caption: 'A large circular window showing river currents.' },
   { title: 'Sun, Fog and Ocean', image_filename: 'sunset_ocean.jpg', caption: 'A commission for a Santa Cruz beach house.' },
   { title: 'Glass X-Ray', image_filename: 'xray.jpg', caption: 'A commission from a radiologist, showing his favorite x-ray of a broken bone.' },
@@ -55,7 +53,7 @@ const theme = createTheme({
     background: { default: '#ffffff' },
   },
   typography: {
-    fontFamily: '"Helvetica Neue", Arial, sans-serif',
+    fontFamily: '"Montserrat", Arial, sans-serif',
     h2: { fontFamily: '"Pacifico", Arial, sans-serif' },
   },
 });
@@ -77,7 +75,7 @@ const Navigation = () => {
     <AppBar position="sticky" color="default" elevation={1} sx={{ backgroundColor: 'black', top: 0 }}>
       <Toolbar sx={{ justifyContent: 'space-between', color: 'white' }}>
         <Box sx={{ display: 'flex', gap: 2 }}>
-          {['home', 'glasswork', 'code', 'about'].map((id) => (
+          {['home', 'code', 'glasswork', 'about'].map((id) => (
             <Button key={id} color="inherit" onClick={() => scrollToSection(id)}>
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </Button>
@@ -101,8 +99,11 @@ const HomeSection = () => (
         <Box sx={{ flex: '2' }}>
           <Typography variant="h5" component="h1" gutterBottom sx={{ fontWeight: 300 }}>Hi! I'm</Typography>
           <Typography component="h1" gutterBottom sx={{ fontFamily: '"Pacifico", Arial, sans-serif', fontWeight: 300, fontSize: '4rem', lineHeight: 1.2 }}>Madeleine Andersen</Typography>
-          <Typography variant="h5" sx={{ fontWeight: 300, color: 'text.secondary', lineHeight: 1.8 }}>
-            I'm a stained glass artist and creative technologist. I'm exploring the intersection of software engineering, data visualization, and tactile art.
+          <Typography variant="h5" sx={{ fontWeight: 300, color: 'text.secondary', lineHeight: 1.8, mb: 12 }}>
+            I'm a stained glass artist and software engineer. I'm merging my technical experience and artistic practice to build weird, beautiful things!
+          </Typography>
+          <Typography variant="h5" sx={{ fontWeight: 300, color: 'text.secondary', lineHeight: 1.8, mt: 6 }}>
+            Here's what I'm working on:
           </Typography>
         </Box>
         <Box sx={{ flex: '1' }}>
@@ -129,7 +130,7 @@ const HomeSection = () => (
                 objectFit: 'contain'
               }}
             >
-              <source src={`${process.env.PUBLIC_URL}/assets/an_art_trimmed.mov`} type="video/mp4" />
+              <source src={`${process.env.PUBLIC_URL}/assets/retimed_art_squig.mov`} type="video/mp4" />
             </video>
           </Box>
         </Box>
@@ -142,9 +143,9 @@ const HomeSection = () => (
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'Glass Voicemail',
-      description: 'Using a Voronoi diagram to represent a voicemail from my mom.',
-      image: `${process.env.PUBLIC_URL}/assets/glass_voicemail/glass_voicemail_bw.png`,
+      title: 'Stained Glass Voicemail',
+      description: 'A voronoi diagram derived from a soundwave, depicted in glass. This window is a voicemail from my mom.',
+      image: `${process.env.PUBLIC_URL}/assets/glass_voicemail/construction_photos/washed.png`,
       link: '/glass-voicemail'
     },
     {
@@ -156,9 +157,9 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <Box sx={{ backgroundColor: 'white', py: 8 }}>
+    <Box sx={{ backgroundColor: 'white', pt: 2, pb: 8 }}>
       <Container maxWidth="lg">
-        <SectionTitle>Here's what I'm working on!</SectionTitle>
+        <SectionTitle>Data in Glass</SectionTitle>
         <Grid container spacing={4}>
           {projects.map((project, index) => (
             <Grid item xs={12} key={index}>
@@ -187,7 +188,7 @@ const ProjectsSection = () => {
 const CodeSection = () => (
   <Box id="code" sx={{ py: 8 }}>
     <Container maxWidth="lg">
-      <SectionTitle>Code Sketches</SectionTitle>
+      <SectionTitle>Code Art </SectionTitle>
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           {[
@@ -290,14 +291,8 @@ const AboutSection = () => (
         <Box sx={{ flex: 1 }}>
           <SectionTitle>About</SectionTitle>
           <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
-            I'm a graduate student at CU Boulder's ATLAS institute, pursuing a degree in Creative Technology and Design. I've been a software engineer for four years, and in my free time I've found success as a stained glass artist.<br /><br />
-            I'm trying to merge my technical skills and artistic proclivities and build weird and beautiful things! These days I'm interested in:
+            I'm a graduate student at CU Boulder's ATLAS institute, pursuing a degree in Creative Technology and Design. I received a BS in Computer Science from Brigham Young University in 2021, and have spent four years as a software engineer at Techcyte, Inc. Over the past two years I've developed an artistic practice in stained glass in my free time, and my commissions have been highly sought-after.
           </Typography>
-          <Box component="ul" sx={{ mt: 2, mb: 3 }}>
-            {['Strange lamps', 'Turning industrial engineering diagrams into art', 'Embedded systems programming'].map((item, i) => (
-              <Typography key={i} component="li" variant="body1" sx={{ mb: i < 2 ? 1 : 0 }}>{item}</Typography>
-            ))}
-          </Box>
           <Button variant="contained" href={`${process.env.PUBLIC_URL}/assets/madeleine_portfolio.pdf`} target="_blank" sx={{ py: 1.5, mt: 4, backgroundColor: 'black', color: 'white', '&:hover': { backgroundColor: 'black' } }}>View Resume (PDF)</Button>
         </Box>
 
@@ -340,7 +335,7 @@ const Footer = () => (
         <Box>
           <Typography variant="h6" sx={{ mb: 2, color: 'white' }}>Quick Links</Typography>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-            {['home', 'glasswork', 'code', 'about'].map((id) => (
+            {['home', 'code', 'glasswork', 'about'].map((id) => (
               <Button key={id} color="inherit" onClick={() => document.getElementById(id).scrollIntoView({ behavior: 'smooth' })} sx={{ color: '#aaa', justifyContent: 'flex-start', p: 0 }}>
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </Button>

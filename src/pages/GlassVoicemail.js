@@ -5,23 +5,32 @@ import {
     Typography,
     Button,
     Grid,
-    Paper
+    Paper,
+    CircularProgress
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ReactMarkdown from 'react-markdown';
 
 const GlassVoicemail = () => {
     const [markdownContent, setMarkdownContent] = useState('');
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+
         fetch(`${process.env.PUBLIC_URL}/assets/glass_voicemail/content/glass_voicemail.md`)
             .then(response => response.text())
             .then(text => {
                 // Replace %PUBLIC_URL% placeholders with actual path
                 const processedText = text.replace(/%PUBLIC_URL%/g, process.env.PUBLIC_URL);
                 setMarkdownContent(processedText);
+                setLoading(false);
             })
-            .catch(error => console.error('Error loading markdown:', error));
+            .catch(error => {
+                console.error('Error loading markdown:', error);
+                setLoading(false);
+            });
     }, []);
 
     // Custom renderer for images to handle audio files
@@ -68,20 +77,34 @@ const GlassVoicemail = () => {
                     Back to Portfolio
                 </Button>
 
-                {/* Markdown Content */}
-                <Box sx={{
-                    maxWidth: '900px',
-                    mx: 'auto',
-                    '& h1': { fontWeight: 300, mb: 4, fontSize: '3.5rem', fontFamily: '"Helvetica Neue", Arial, sans-serif' },
-                    '& h2': { fontWeight: 300, mt: 6, mb: 3, fontSize: '2.25rem', fontFamily: '"Helvetica Neue", Arial, sans-serif' },
-                    '& h3': { fontWeight: 400, mt: 4, mb: 2, fontSize: '1.75rem', fontFamily: '"Helvetica Neue", Arial, sans-serif' },
-                    '& p': { lineHeight: 1.8, mb: 2, fontSize: '1.125rem' },
-                    '& ul, & ol': { lineHeight: 1.8, mb: 2, pl: 3, fontSize: '1.125rem' },
-                    '& img': { width: '100%', borderRadius: 2, mb: 3, mt: 2 },
-                    '& hr': { my: 6, border: 'none', borderTop: '1px solid #e0e0e0' }
-                }}>
-                    <ReactMarkdown components={components}>{markdownContent}</ReactMarkdown>
-                </Box>
+                {/* Loading State */}
+                {loading ? (
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            minHeight: '50vh'
+                        }}
+                    >
+                        <CircularProgress size={60} sx={{ color: 'black' }} />
+                    </Box>
+                ) : (
+                    /* Markdown Content */
+                    <Box sx={{
+                        maxWidth: '900px',
+                        mx: 'auto',
+                        '& h1': { fontWeight: 300, mb: 4, fontSize: '3.5rem', fontFamily: '"Montserrat", Arial, sans-serif' },
+                        '& h2': { fontWeight: 300, mt: 6, mb: 3, fontSize: '2.25rem', fontFamily: '"Montserrat", Arial, sans-serif' },
+                        '& h3': { fontWeight: 400, mt: 4, mb: 2, fontSize: '1.75rem', fontFamily: '"Montserrat", Arial, sans-serif' },
+                        '& p': { lineHeight: 1.8, mb: 2, fontSize: '1.125rem' },
+                        '& ul, & ol': { lineHeight: 1.8, mb: 2, pl: 3, fontSize: '1.125rem' },
+                        '& img': { width: '100%', borderRadius: 2, mb: 3, mt: 2 },
+                        '& hr': { my: 6, border: 'none', borderTop: '1px solid #e0e0e0' }
+                    }}>
+                        <ReactMarkdown components={components}>{markdownContent}</ReactMarkdown>
+                    </Box>
+                )}
             </Container>
         </Box>
     );
