@@ -98,7 +98,6 @@ Incidentally, the copper foil is conductive and a stained glass window forms a c
 <img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/close_detail_angled.jpg" width="600"/>
 <img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/snow.jpg" width="600"/>
 <img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/angled_wideshot.jpg" width="600"/>
-<img src="%PUBLIC_URL%/assets/glass_voicemail/construction_photos/cuts_complete.jpg" width="600"/>
 
 
 
