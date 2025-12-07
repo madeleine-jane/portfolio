@@ -143,8 +143,8 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: 'Stained Glass Voicemail',
-      description: 'A voronoi diagram derived from a soundwave, depicted in glass. This window is a voicemail from my mom.',
-      image: `${process.env.PUBLIC_URL}/assets/glass_voicemail/construction_photos/washed.png`,
+      description: 'This window is a voicemail from my mom! A voronoi diagram derived from a soundwave, depicted in glass. ',
+      image: `${process.env.PUBLIC_URL}/assets/glass_voicemail/glamour_shots/mid_detail.jpg`,
       link: '/glass-voicemail'
     },
     {
@@ -290,7 +290,7 @@ const AboutSection = () => (
         <Box sx={{ flex: 1 }}>
           <SectionTitle>About</SectionTitle>
           <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
-            I'm a graduate student at CU Boulder's ATLAS institute, pursuing a degree in Creative Technology and Design. I received a BS in Computer Science from Brigham Young University in 2021, and have spent four years as a software engineer at Techcyte, Inc. Over the past two years I've developed an artistic practice in stained glass in my free time, and I've been commissioned several dozen times.
+            I'm a graduate student at CU Boulder's ATLAS institute, pursuing a degree in Creative Technology and Design. I received a BS in Computer Science from Brigham Young University in 2021, and have spent four years as a software engineer at Techcyte, Inc. Over the past two years I've developed a successful artistic practice in stained glass.
           </Typography>
           <Button variant="contained" href={`${process.env.PUBLIC_URL}/assets/madeleine_portfolio.pdf`} target="_blank" sx={{ py: 1.5, mt: 4, backgroundColor: 'black', color: 'white', '&:hover': { backgroundColor: 'black' } }}>View Resume (PDF)</Button>
         </Box>
