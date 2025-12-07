@@ -59,9 +59,11 @@ I'm picking a sunset-themed color scheme to match the emotional tone of the voic
 ![cutting.png](%PUBLIC_URL%/assets/glass_voicemail/construction_photos/cutting.png)
 
 1. Grind down the edges to smooth out any ragged bits from the cutting stage, then wash and label the pieces
-![washed.png](%PUBLIC_URL%/assets/glass_voicemail/construction_photos/grinds_complete_rotated.png)
+![grinds_complete.png](%PUBLIC_URL%/assets/glass_voicemail/construction_photos/grinds_complete_rotated.png)
 
 1. Wrap the edges in copper foil, then reassemble them on the canvas
+
+![pieces.png](%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/foiled_pieces.jpg)
 ![timelapse.mov](%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/timelapse_foil.mp4)
 
 1. Solder the window
@@ -97,7 +99,6 @@ Incidentally, the copper foil is conductive and a stained glass window forms a c
 <img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/snow.jpg" width="600"/>
 <img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/angled_wideshot.jpg" width="600"/>
 <img src="%PUBLIC_URL%/assets/glass_voicemail/construction_photos/cuts_complete.jpg" width="600"/>
-<img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/foiled_pieces.jpg" width="600"/>
 
 
 
