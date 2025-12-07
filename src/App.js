@@ -26,8 +26,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
-import GlassVoicemail from './pages/GlassVoicemail';
-import MetroMaps from './pages/MetroMaps';
+import PortfolioPage from './pages/PortfolioPage';
 
 // ==== DATA ====
 const glassPortfolio = [
@@ -291,7 +290,7 @@ const AboutSection = () => (
         <Box sx={{ flex: 1 }}>
           <SectionTitle>About</SectionTitle>
           <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
-            I'm a graduate student at CU Boulder's ATLAS institute, pursuing a degree in Creative Technology and Design. I received a BS in Computer Science from Brigham Young University in 2021, and have spent four years as a software engineer at Techcyte, Inc. Over the past two years I've developed an artistic practice in stained glass in my free time, and my commissions have been highly sought-after.
+            I'm a graduate student at CU Boulder's ATLAS institute, pursuing a degree in Creative Technology and Design. I received a BS in Computer Science from Brigham Young University in 2021, and have spent four years as a software engineer at Techcyte, Inc. Over the past two years I've developed an artistic practice in stained glass in my free time, and I've been commissioned several dozen times.
           </Typography>
           <Button variant="contained" href={`${process.env.PUBLIC_URL}/assets/madeleine_portfolio.pdf`} target="_blank" sx={{ py: 1.5, mt: 4, backgroundColor: 'black', color: 'white', '&:hover': { backgroundColor: 'black' } }}>View Resume (PDF)</Button>
         </Box>
@@ -361,8 +360,8 @@ export default function Portfolio() {
     <Router basename="/portfolio">
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route path="/glass-voicemail" element={<GlassVoicemail />} />
-          <Route path="/metro-maps" element={<MetroMaps />} />
+          <Route path="/glass-voicemail" element={<PortfolioPage markdownUrl={`${process.env.PUBLIC_URL}/assets/glass_voicemail/content.md`} />} />
+          <Route path="/metro-maps" element={<PortfolioPage markdownUrl={`${process.env.PUBLIC_URL}/assets/metro_maps/content.md`} />} />
           <Route path="/" element={
             <Box sx={{ backgroundColor: 'white' }}>
               <Navigation />
