@@ -4,7 +4,9 @@ This is a voicemail from my mom:\
 ![i_love_you.m4a](%PUBLIC_URL%/assets/glass_voicemail/i_love_you.m4a)
 
 And here's that voicemail as a stained glass window:\
-![washed.png](%PUBLIC_URL%/assets/glass_voicemail/construction_photos/washed.png)
+![wide_angled.png](%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/wide_angled.jpg)
+![mid_detail.png](%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/mid_detail.jpg)
+![closeup_warm.png](%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/closeup_warm.jpg)
 
 This window is a Voronoi diagram created from the amplitude peaks of the voicemail's soundwave.
 
@@ -56,25 +58,21 @@ I'm picking a sunset-themed color scheme to match the emotional tone of the voic
 1. Use the paper pieces as a cutting guide, and cut out the glass using a scoring tool and pliers
 ![cutting.png](%PUBLIC_URL%/assets/glass_voicemail/construction_photos/cutting.png)
 
-1. Grind down the edges to smooth out any ragged bits from the cutting stage
-![grinds_complete_rotated.png](%PUBLIC_URL%/assets/glass_voicemail/construction_photos/grinds_complete_rotated.png)
+1. Grind down the edges to smooth out any ragged bits from the cutting stage, then wash and label the pieces
+![washed.png](%PUBLIC_URL%/assets/glass_voicemail/construction_photos/grinds_complete_rotated.png)
 
-1. Wash the pieces and label them
-![washed.png](%PUBLIC_URL%/assets/glass_voicemail/construction_photos/washed.png)
+1. Wrap the edges in copper foil, then reassemble them on the canvas
+![timelapse.mov](%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/timelapse_foil.mp4)
 
-1. Wrap the edges in copper foil
-> [picture of foiling]
+1. Solder the window
+![soldering.png](%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/soldering.jpg)
 
-1. Soldering
-> [picture of soldering]
-
-1. Framing
-> [picture of framing]
 
 ---
 
 ## Future development
-I'd love to build a frame that has inset LED lights behind the glass, and use individually addressible LEDs to make the piece light up in an interesting pattern.
+
+This was a super fun project! There's lots to do in this space. I'd love to build a frame that has inset LED lights behind the glass, and use individually addressible LEDs to make the piece light up in an interesting pattern.
 
 Incidentally, the copper foil is conductive and a stained glass window forms a circuit. I'm going to be doing some further investigation into whether I might be able to make stained glass that is touch responsive.
 
@@ -86,7 +84,20 @@ Incidentally, the copper foil is conductive and a stained glass window forms a c
 - Cuts on my hands: 9
 - Trips to the glass store: 2
 - Times I got in trouble for stealing a lamp at the fabrication lab: 1
-- Hours spent (approximate, so far): 30
+- Copper foil used: 90 ft
+- Hours spent (approximate): 55
+
+---
+
+## Photo Gallery
+
+<img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/carrying_glass.jpg" width="600"/>
+<img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/close_detail.jpg" width="600"/>
+<img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/close_detail_angled.jpg" width="600"/>
+<img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/snow.jpg" width="600"/>
+<img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/angled_wideshot.jpg" width="600"/>
+<img src="%PUBLIC_URL%/assets/glass_voicemail/construction_photos/cuts_complete.jpg" width="600"/>
+<img src="%PUBLIC_URL%/assets/glass_voicemail/glamour_shots/foiled_pieces.jpg" width="600"/>
 
 
 
