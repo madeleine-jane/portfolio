@@ -1,6 +1,6 @@
 # Glass Voicemail
 
-This is a voicemail from my mom:\
+This is a snippet of a voicemail from my mom:\
 ![i_love_you.m4a](%PUBLIC_URL%/assets/glass_voicemail/i_love_you.m4a)
 
 And here's that voicemail as a stained glass window:\
